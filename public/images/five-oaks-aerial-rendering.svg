@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Five Oaks aerial rendering placeholder, Oakville, Ontario</title>
+  <rect width="1200" height="800" fill="#123F3D"/>
+  <circle cx="220" cy="180" r="140" fill="#1F6E6A" opacity="0.55"/>
+  <circle cx="980" cy="620" r="180" fill="#165652"/>
+  <rect x="80" y="420" width="1040" height="12" fill="#C9A15A" opacity="0.45"/>
+  <rect x="160" y="240" width="180" height="110" fill="#EAF1EF" opacity="0.12"/>
+  <rect x="380" y="260" width="180" height="110" fill="#EAF1EF" opacity="0.12"/>
+  <rect x="600" y="240" width="180" height="110" fill="#EAF1EF" opacity="0.12"/>
+  <rect x="820" y="260" width="180" height="110" fill="#EAF1EF" opacity="0.12"/>
+  <path d="M0 560 C 240 500, 480 620, 720 540 C 960 460, 1100 560, 1200 520 L 1200 800 L 0 800 Z" fill="#0E2E2C"/>
+  <text x="60" y="760" fill="#C9A15A" font-family="Georgia, serif" font-size="28">Five Oaks aerial context  placeholder</text>
+</svg>

@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1f6e6a;
+  --color-brand-deep: #123f3d;
+  --color-brand-accent: #c9a15a;
+  --color-on-brand: #ffffff;
+  --color-on-accent: #123f3d;
+
+  --color-surface: #f7f9f8;
+  --color-surface-alt: #eaf1ef;
+  --color-surface-card: #ffffff;
+
+  --color-text-primary: #16211f;
+  --color-text-muted: #566662;
+  --color-border: #d8e3e0;
+
+  --color-success: #1f6e6a;
+  --color-error: #8b2e2e;
+
+  --font-display: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(18, 63, 61, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.prose-measure {
+  max-width: 68ch;
+}
+
+.section-space {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-space {
+    padding-block: 8rem;
+  }
+}
+
+.card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: var(--shadow-card);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  background: var(--color-brand-deep);
+  color: var(--color-surface);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.placeholder-texture {
+  background-color: var(--color-brand-deep);
+  background-image:
+    radial-gradient(ellipse at 18% 22%, rgba(31, 110, 106, 0.55), transparent 55%),
+    radial-gradient(ellipse at 82% 78%, rgba(201, 161, 90, 0.28), transparent 50%),
+    linear-gradient(165deg, #123f3d 0%, #1f6e6a 55%, #0e2e2c 100%);
+}
+
+@layer base {
+  a {
+    color: inherit;
+  }
+}
+
+a.btn-primary,
+button.btn-primary {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 1.5rem;
+  background-color: #c9a15a;
+  color: #123f3d;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.btn-primary:hover,
+button.btn-primary:hover:not(:disabled) {
+  background-color: #b8904a;
+  color: #123f3d;
+}
+
+a.btn-primary:focus-visible,
+button.btn-primary:focus-visible {
+  outline: 2px solid #c9a15a;
+  outline-offset: 3px;
+}
+
+a.btn-primary.btn-compact {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  font-size: 16px;
+}
+
+a.btn-ghost {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 2px;
+  padding: 0 1.5rem;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+a.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.badge-status {
+  display: inline-block;
+  border-radius: 999px;
+  background-color: #c9a15a;
+  color: #123f3d;
+  padding: 0.25rem 0.75rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+@media (min-width: 768px) {
+  th,
+  td {
+    padding: 0.75rem 1rem;
+  }
+}
+
+th {
+  font-weight: 600;
+  color: var(--color-brand-deep);
+}
+
+button.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

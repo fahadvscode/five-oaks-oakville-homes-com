@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Five Oaks site location alongside Sixteen Mile Creek and Lions Valley Park</title>
+  <rect width="1200" height="800" fill="#EAF1EF"/>
+  <rect x="0" y="0" width="1200" height="800" fill="#123F3D"/>
+  <path d="M80 120 C 280 80, 420 260, 640 180 C 860 100, 1020 240, 1120 160 L 1120 720 L 80 720 Z" fill="#1F6E6A" opacity="0.5"/>
+  <path d="M140 380 C 360 300, 540 460, 760 360 C 940 280, 1060 400, 1120 340" fill="none" stroke="#C9A15A" stroke-width="8"/>
+  <text x="60" y="760" fill="#F7F9F8" font-family="Georgia, serif" font-size="26">Sixteen Mile Creek / Lions Valley Park  placeholder</text>
+</svg>
