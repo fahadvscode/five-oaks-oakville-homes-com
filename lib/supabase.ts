@@ -19,4 +19,4 @@ export function getSupabaseAnon(): SupabaseClient {
   return client;
 }
 
-export const LEADS_TABLE = "five_oaks_oakville_homes_com_leads";
+export const LEADS_TABLE = "five_oaks_oakville_homes_ca_leads";

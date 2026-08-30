@@ -12,7 +12,7 @@ export function MobileNav() {
     <div className="lg:hidden">
       <button
         type="button"
-        className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-sm border border-border px-3 text-sm font-semibold"
+        className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-sm border border-white/35 px-3 text-sm font-semibold text-surface"
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((value) => !value)}

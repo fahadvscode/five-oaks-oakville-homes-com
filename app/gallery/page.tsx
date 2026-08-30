@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
 import { CtaBlock, PageHeader, Prose, Section, SectionHeading } from "@/components/LayoutBits";
-import { GALLERY_ITEMS, PAGE_META } from "@/lib/content";
+import { GALLERY_ITEMS, IMAGE_AI_DISCLAIMER, PAGE_META } from "@/lib/content";
 import { COPY } from "@/lib/copy";
 import { metadataByKey } from "@/lib/seo";
 import { breadcrumbSchema, galleryImageSchemas, webPageSchema } from "@/lib/schema";
@@ -42,22 +43,34 @@ export default function GalleryPage() {
         <ul className="mt-10 grid gap-8 md:grid-cols-2">
           {GALLERY_ITEMS.map((item) => (
             <li key={item.id} className="card overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={`/images/${item.filename}`}
                 alt={item.alt}
-                width={1200}
-                height={800}
+                width={item.width}
+                height={item.height}
                 className="h-auto w-full"
+                sizes="(max-width: 768px) 100vw, 600px"
               />
               <div className="p-5">
                 <p className="font-semibold text-brand-deep">{item.label}</p>
+                {item.aiGenerated ? (
+                  <p className="mt-2 inline-block rounded-sm bg-surface-alt px-2 py-1 text-xs font-semibold uppercase tracking-wide text-brand-deep">
+                    AI-generated illustration
+                  </p>
+                ) : (
+                  <p className="mt-2 inline-block rounded-sm bg-surface-alt px-2 py-1 text-xs font-semibold uppercase tracking-wide text-brand-deep">
+                    Official marketing image
+                  </p>
+                )}
                 <p className="mt-2 text-sm text-text-muted">{item.caption}</p>
-                <p className="mt-2 text-xs text-text-muted">Published date: not yet released</p>
+                {item.aiGenerated ? (
+                  <p className="mt-2 text-xs text-text-muted">{IMAGE_AI_DISCLAIMER}</p>
+                ) : null}
               </div>
             </li>
           ))}
         </ul>
+        <p className="mt-8 max-w-[68ch] text-sm text-text-muted">{IMAGE_AI_DISCLAIMER}</p>
       </Section>
       <Section alt labelledBy="amenities">
         <SectionHeading id="amenities">Nearby retail and everyday amenities</SectionHeading>

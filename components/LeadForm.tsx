@@ -4,16 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  BUDGET_OPTIONS,
-  BUYER_TYPE_LABELS,
-  BUYER_TYPE_OPTIONS,
-  CASL_CONSENT,
-  HOME_TYPE_LABELS,
-  HOME_TYPE_OPTIONS,
-  TIMELINE_LABELS,
-  TIMELINE_OPTIONS,
-} from "@/lib/content";
+import { CASL_CONSENT } from "@/lib/content";
 import { leadFormSchema, type LeadFormValues } from "@/lib/validation";
 import { captureFirstTouch, readFirstTouch } from "@/lib/utm";
 import { trackEvent, trackMetaLead } from "@/lib/analytics";
@@ -46,10 +37,6 @@ export function LeadForm({
       last_name: "",
       email: "",
       phone: "",
-      home_type_interest: undefined,
-      budget_range: undefined,
-      buyer_type: undefined,
-      timeline: undefined,
       website: "",
       ts,
       page_path: pathname,
@@ -182,65 +169,8 @@ export function LeadForm({
         </div>
       </div>
 
-      {!compact ? (
-        <div className="mt-5 grid gap-5 md:grid-cols-2">
-          <div>
-            <label htmlFor={`${id}-home_type`} className={labelClass}>
-              Home type interest
-            </label>
-            <select id={`${id}-home_type`} className={inputClass} {...form.register("home_type_interest")}>
-              <option value="">Select one</option>
-              {HOME_TYPE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {HOME_TYPE_LABELS[option]}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor={`${id}-budget`} className={labelClass}>
-              Budget range
-            </label>
-            <select id={`${id}-budget`} className={inputClass} {...form.register("budget_range")}>
-              <option value="">Select one</option>
-              {BUDGET_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor={`${id}-buyer_type`} className={labelClass}>
-              Buyer type
-            </label>
-            <select id={`${id}-buyer_type`} className={inputClass} {...form.register("buyer_type")}>
-              <option value="">Select one</option>
-              {BUYER_TYPE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {BUYER_TYPE_LABELS[option]}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor={`${id}-timeline`} className={labelClass}>
-              Timeline
-            </label>
-            <select id={`${id}-timeline`} className={inputClass} {...form.register("timeline")}>
-              <option value="">Select one</option>
-              {TIMELINE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {TIMELINE_LABELS[option]}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      ) : null}
-
       <fieldset className="mt-5">
-        <legend className={labelClass}>Are you a licensed real estate agent?</legend>
+        <legend className={labelClass}>Are you a licensed real estate broker?</legend>
         <div className="mt-2 flex gap-6">
           <label className="inline-flex items-center gap-2">
             <input type="radio" value="yes" {...form.register("is_broker")} />

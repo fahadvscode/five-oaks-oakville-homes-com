@@ -74,7 +74,7 @@ export function residenceSchema() {
     },
     numberOfRooms: "Approximately 140 planned units",
     url: `${SITE_URL}/`,
-    image: `${SITE_URL}/images/five-oaks-aerial-rendering.svg`,
+    image: `${SITE_URL}/images/hero_image.jpg`,
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Adjacent to Sixteen Mile Creek" },
       { "@type": "LocationFeatureSpecification", name: "Adjacent to Lions Valley Park" },

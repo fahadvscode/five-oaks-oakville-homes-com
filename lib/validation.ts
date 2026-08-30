@@ -1,19 +1,6 @@
 import { z } from "zod";
-import {
-  BUDGET_OPTIONS,
-  BUYER_TYPE_OPTIONS,
-  HOME_TYPE_OPTIONS,
-  TIMELINE_OPTIONS,
-} from "./content";
 
 const namePattern = /^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s'-]{0,59}$/;
-
-const optionalEnum = <T extends readonly [string, ...string[]]>(options: T) =>
-  z
-    .string()
-    .optional()
-    .transform((value) => (value && value.length > 0 ? value : undefined))
-    .pipe(z.enum(options).optional());
 
 export const leadFormSchema = z.object({
   first_name: z
@@ -42,10 +29,6 @@ export const leadFormSchema = z.object({
       const digits = value.replace(/\D/g, "");
       return digits.length === 10 || digits.length === 11;
     }, "Enter a 10- or 11-digit phone number"),
-  home_type_interest: optionalEnum(HOME_TYPE_OPTIONS),
-  budget_range: optionalEnum(BUDGET_OPTIONS),
-  buyer_type: optionalEnum(BUYER_TYPE_OPTIONS),
-  timeline: optionalEnum(TIMELINE_OPTIONS),
   is_broker: z.enum(["yes", "no"], {
     errorMap: () => ({ message: "Select yes or no" }),
   }),

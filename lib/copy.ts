@@ -66,7 +66,7 @@ export const COPY = {
   },
   gallery: {
     intro: [
-      "Official Five Oaks renderings have not been released publicly as of August 26, 2026. The placeholders below mark the imagery that will be swapped in as soon as Caivan Communities publishes aerial, site, single-detached, and townhome visuals. No fabricated product rendering is shown on this page.",
+      "The aerial below is an official Caivan Communities marketing image of the Five Oaks location at 1303 Dundas Street West, Oakville, alongside Sixteen Mile Creek and Lions Valley Park. The remaining images are AI-generated illustrations created for this independent site. They are not official builder renderings, floor plans, or photographs, and they are labelled as AI-generated. Actual homes, finishes, and views will differ.",
     ],
     amenities: [
       "Five Oaks sits within reach of Oakville's established retail and dining corridors along Dundas Street, with further shopping, groceries, and everyday services available throughout the wider Oakville area. Exact walking distances to specific plazas or grocery stores near 1303 Dundas Street West have not been independently confirmed for this build and should be verified with a current map search before relying on a precise distance claim.",

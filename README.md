@@ -9,7 +9,7 @@ This site is not affiliated with or endorsed by Caivan Communities.
 ## Stack
 
 - Next.js 15 (App Router), TypeScript, Tailwind CSS v4
-- Supabase (`five_oaks_oakville_homes_com_leads`)
+- Supabase (`five_oaks_oakville_homes_ca_leads`, `website_source` = `fiveoaksoakvillehomes.com`)
 - Vercel
 
 ## Local development

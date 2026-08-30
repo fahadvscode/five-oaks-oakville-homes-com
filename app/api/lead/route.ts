@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { SITE_HOST } from "@/lib/content";
 import { getSupabaseAnon, LEADS_TABLE } from "@/lib/supabase";
 import { leadFormSchema, MIN_SUBMIT_MS, normalizePhone } from "@/lib/validation";
 
@@ -49,10 +50,12 @@ export async function POST(request: Request) {
       last_name: data.last_name,
       email: data.email,
       phone: normalizePhone(data.phone),
-      home_type_interest: data.home_type_interest || null,
-      budget_range: data.budget_range || null,
-      buyer_type: data.buyer_type || null,
-      timeline: data.timeline || null,
+      website_source: SITE_HOST,
+      home_type_interest: null,
+      budget_range: null,
+      buyer_type: "end_user",
+      investment_goal: null,
+      timeline: null,
       is_broker: data.is_broker === "yes",
       casl_consent: true,
       consent_timestamp: consentAt,

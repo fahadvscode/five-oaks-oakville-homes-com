@@ -1,6 +1,7 @@
 create table if not exists five_oaks_oakville_homes_com_leads (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
+  website_source text not null default 'fiveoaksoakvillehomes.com',
   first_name text not null,
   last_name text not null,
   email text not null,
@@ -21,6 +22,9 @@ create table if not exists five_oaks_oakville_homes_com_leads (
 );
 
 alter table five_oaks_oakville_homes_com_leads enable row level security;
+
+drop policy if exists "anon can insert five_oaks_oakville_homes_com_leads"
+  on five_oaks_oakville_homes_com_leads;
 
 create policy "anon can insert five_oaks_oakville_homes_com_leads"
   on five_oaks_oakville_homes_com_leads for insert

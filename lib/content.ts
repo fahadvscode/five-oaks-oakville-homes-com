@@ -49,14 +49,24 @@ export const DEPOSIT_DISPLAY = TBA;
 export const OCCUPANCY_DISPLAY = TBA;
 export const SIZES_DISPLAY = TBA;
 
-export const HERO_IMAGE = {
-  src: "/images/five-oaks-hero.svg",
-  alt: "Five Oaks Oakville — ravine and greenspace setting alongside Sixteen Mile Creek",
-  width: 1920,
-  height: 1080,
-  caption:
-    "Neutral placeholder for the Five Oaks setting alongside Sixteen Mile Creek and Lions Valley Park, Oakville. Official community renderings have not been released as of August 26, 2026.",
+export const PROJECT_LOGO = {
+  src: "/images/Caivan-FiveOaks-Logo-White-RGB.webp",
+  alt: "Five Oaks by Caivan Communities",
+  width: 2500,
+  height: 847,
 } as const;
+
+export const HERO_IMAGE = {
+  src: "/images/hero_image.jpg",
+  alt: "Five Oaks site location alongside Sixteen Mile Creek and Lions Valley Park, Oakville",
+  width: 2400,
+  height: 1275,
+  caption:
+    "Aerial of the Five Oaks location at 1303 Dundas Street West, Oakville, alongside Sixteen Mile Creek and Lions Valley Park. Official Caivan Communities marketing image.",
+} as const;
+
+export const IMAGE_AI_DISCLAIMER =
+  "AI-generated illustration created for this independent information site. It is not an official Caivan Communities rendering, floor plan, or photograph, and is for atmosphere only. Actual homes, finishes, and views will differ.";
 
 export const NAV = [
   { href: "/", label: "Overview" },
@@ -311,7 +321,7 @@ export const CASL_CONSENT =
   "I consent to receive electronic communications about Five Oaks and similar pre-construction opportunities. I understand I can withdraw consent at any time using the unsubscribe link in any message.";
 
 export const INDEPENDENCE_DISCLAIMER =
-  "This is an independent information and registration website for Five Oaks. It is not the official website of Caivan Communities and is not affiliated with or endorsed by them. All renderings, pricing, sizes, and specifications are for illustration only and are subject to change without notice. E.&O.E.";
+  "This is an independent information and registration website for Five Oaks. It is not the official website of Caivan Communities and is not affiliated with or endorsed by them. The Five Oaks wordmark is Caivan Communities' official project logo, used here only to identify the community. Some gallery images are AI-generated illustrations, not official builder renderings, and are labelled as such. All renderings, pricing, sizes, and specifications are for illustration only and are subject to change without notice. E.&O.E.";
 
 export const SPECS_DISCLAIMER = `Prices, sizes, specifications, and availability are subject to change without notice. E.&O.E. Information current as of ${LAST_UPDATED}.`;
 
@@ -464,38 +474,53 @@ export const GALLERY_ITEMS: {
   alt: string;
   caption: string;
   label: string;
+  width: number;
+  height: number;
+  aiGenerated: boolean;
 }[] = [
   {
     id: "aerial",
-    filename: "five-oaks-aerial-rendering.svg",
+    filename: "hero_image.jpg",
     alt: "Five Oaks aerial rendering, Oakville, Ontario",
     caption:
-      "Placeholder for a Five Oaks aerial rendering, Oakville, Ontario. Official aerial imagery has not been released as of August 26, 2026.",
-    label: "Aerial context",
+      "Official aerial of the Five Oaks location alongside Sixteen Mile Creek and Lions Valley Park, with Dundas Street West spanning the valley. Caivan Communities marketing image.",
+    label: "Site aerial",
+    width: 2400,
+    height: 1275,
+    aiGenerated: false,
   },
   {
     id: "site",
-    filename: "five-oaks-site-location.svg",
+    filename: "five-oaks-creek-trails.jpg",
     alt: "Five Oaks site location alongside Sixteen Mile Creek and Lions Valley Park",
     caption:
-      "Placeholder for Five Oaks site location alongside Sixteen Mile Creek and Lions Valley Park. Official site imagery has not been released as of August 26, 2026.",
-    label: "Site location",
+      "AI-generated illustration of the Sixteen Mile Creek ravine and trail setting near Five Oaks. Not an official Caivan Communities photograph or rendering.",
+    label: "Creek and trails",
+    width: 1536,
+    height: 1024,
+    aiGenerated: true,
   },
   {
     id: "singles",
-    filename: "five-oaks-single-detached.svg",
+    filename: "five-oaks-single-detached.jpg",
     alt: "Five Oaks single-detached home exterior rendering, Oakville",
     caption:
-      "Placeholder for a Five Oaks single-detached home exterior rendering, Oakville. Official product renderings have not been released as of August 26, 2026.",
+      "AI-generated illustration of a modern single-detached home in the style of nearby Caivan product. Not an official Five Oaks floor plan or builder rendering.",
     label: "Single-detached collection",
+    width: 1536,
+    height: 1024,
+    aiGenerated: true,
   },
   {
     id: "towns",
-    filename: "five-oaks-townhomes.svg",
+    filename: "five-oaks-townhomes.jpg",
     alt: "Five Oaks townhome streetscape rendering, Oakville",
     caption:
-      "Placeholder for a Five Oaks townhome streetscape rendering, Oakville. Official streetscape imagery has not been released as of August 26, 2026.",
+      "AI-generated illustration of a modern townhome streetscape. Not an official Five Oaks floor plan or Caivan Communities rendering.",
     label: "Townhome streetscape",
+    width: 1536,
+    height: 1024,
+    aiGenerated: true,
   },
 ];
 
